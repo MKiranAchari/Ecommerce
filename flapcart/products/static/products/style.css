@@ -1,0 +1,42 @@
+body {
+    background-color: #f5f6fa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.card {
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+footer {
+    margin-top: 40px;
+}
+
+.product-img {
+    width: 100%;              /* fill the card width */
+    height: 250px;            /* fixed height for uniformity */
+    object-fit: cover;        /* crop image to fit box */
+    border-radius: 8px 8px 0 0; /* match card rounded corners */
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card-body {
+    flex-grow: 1;
+}

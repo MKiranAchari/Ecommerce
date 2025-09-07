@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Successfully Logged Out...</h2>
+<p>If you have a account: <a href="{% url 'login' %}">Login</a></p>
+<p>Don’t have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+{% endblock %}

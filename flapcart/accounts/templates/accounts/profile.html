@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Profile</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Username: {{ request.user.username }}</label><br>
+    <label>Email: {{ request.user.email }}</label><br>
+
+    <label>Phone:</label>
+    <input type="text" name="phone" value="{{ profile.phone }}"><br>
+
+    <label>Address:</label><br>
+    <textarea name="address">{{ profile.address }}</textarea><br>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<hr>
+<h3>My Orders</h3>
+<ul>
+    {% for order in orders %}
+        <li>
+            Order #{{ order.id }} - {{ order.get_status_display }} - ₹{{ order.total_amount }}
+        </li>
+    {% empty %}
+        <li>No orders yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
